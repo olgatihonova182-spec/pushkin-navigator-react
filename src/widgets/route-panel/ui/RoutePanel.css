@@ -1,0 +1,21 @@
+/* Route card on top of the shared Panel. */
+.panel--route > .panel__row { flex-wrap: wrap; align-items: flex-start; }
+.panel__title { font: 600 19px/24px var(--md-font-brand); letter-spacing: -.01em; }
+
+.stop { padding: 16px; border-radius: var(--md-shape-l); background: var(--md-surface-container-lowest); display: flex; flex-direction: column; gap: 8px; align-items: flex-start; box-shadow: var(--md-elev-1); }
+.stop__progress { display: flex; gap: 4px; }
+.stop__progress span { width: 18px; height: 4px; border-radius: 2px; background: var(--md-outline-variant); }
+.stop__progress span.is-passed { background: var(--md-primary); }
+.stop__progress span.is-current { background: var(--md-route); }
+.riddle { display: flex; gap: 10px; font: 400 14px/20px var(--md-font-plain); padding: 12px; background: var(--md-tertiary-container); color: var(--md-on-tertiary-container); border-radius: var(--md-shape-m); }
+
+.settings-row { display: flex; flex-wrap: wrap; gap: 0 20px; }
+
+/* Steps — a vertical ribbon with icons in circles. */
+.steps { list-style: none; margin: 0; padding: 0; position: relative; }
+.steps::before { content: ""; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 2px; background: var(--md-outline-variant); }
+.step { position: relative; width: 100%; display: flex; gap: 12px; align-items: center; text-align: left; padding: 6px 4px 6px 0; border: 0; background: none; cursor: pointer; font: 400 14px/20px var(--md-font-plain); color: var(--md-on-surface); border-radius: var(--md-shape-m); }
+.step__icon { flex: none; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--md-surface-container-highest); color: var(--md-on-surface-variant); z-index: 1; }
+.step__icon .ms { font-size: 20px; }
+.step--here .step__icon { background: var(--md-route); color: var(--md-on-route); }
+.step--here { font-weight: 600; }

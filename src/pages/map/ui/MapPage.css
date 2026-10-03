@@ -1,0 +1,2 @@
+/* .map-field is also the scroll target after route actions (app/ui/Screen.jsx). */
+.map-field { padding: 4px 16px 0; }

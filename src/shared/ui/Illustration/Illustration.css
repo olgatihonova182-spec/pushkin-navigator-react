@@ -1,0 +1,12 @@
+/* Illustrations: fills go through colour roles, so drawings switch to the dark scheme by themselves.
+   Shared with the campus map and building facades. */
+.il-sky { fill: var(--il-sky); }
+.il-wall { fill: var(--il-wall); }
+.il-line { fill: none; stroke: var(--il-line); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.il-thin { fill: none; stroke: var(--il-line); stroke-width: 1.2; stroke-linecap: round; opacity: .55; }
+.il-accent { fill: var(--il-accent); }
+.il-accent-line { fill: none; stroke: var(--il-accent); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.il-sun { fill: var(--il-sun); }
+.il-water { fill: var(--il-water); }
+.il-path { fill: none; stroke: var(--md-route); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1 7; }
+.il-green { fill: var(--md-crowd-0); }

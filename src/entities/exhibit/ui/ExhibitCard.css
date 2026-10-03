@@ -1,0 +1,5 @@
+.exhibit-card { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-radius: var(--md-shape-l); background: var(--md-surface-container-low); }
+.exhibit-card__icon { flex: none; width: 40px; height: 40px; border-radius: var(--md-shape-m); display: inline-flex; align-items: center; justify-content: center; background: var(--md-primary-container); color: var(--md-on-primary-container); }
+.exhibit-card__text { display: flex; flex-direction: column; min-width: 0; }
+.exhibit-card__name { font: 600 16px/22px var(--md-font-plain); color: var(--md-on-surface); }
+.exhibit-card__meta { font: 400 13px/18px var(--md-font-plain); color: var(--md-on-surface-variant); }

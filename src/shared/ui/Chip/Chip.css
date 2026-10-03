@@ -1,0 +1,13 @@
+/* M3 filter chips: 32 high, rounding 8; selected — secondary-container with a check. */
+.chips { display: flex; gap: 8px; overflow-x: auto; margin: 0 -16px; padding: 2px 16px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex: none; display: inline-flex; align-items: center; gap: 8px;
+  height: 32px; padding: 0 16px; border: 1px solid var(--md-outline); border-radius: var(--md-shape-s);
+  background: transparent; cursor: pointer; font: 600 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant);
+  position: relative;
+}
+.chip::before { content: ""; position: absolute; left: 0; right: 0; top: -8px; bottom: -8px; } /* 48 touch target */
+.chip .ms { font-size: 18px; margin-left: -8px; }
+.chip[aria-pressed="true"] { background: var(--md-secondary-container); border-color: transparent; color: var(--md-on-secondary-container); padding-left: 8px; }
+.chip[aria-pressed="true"] .ms { margin-left: 0; }

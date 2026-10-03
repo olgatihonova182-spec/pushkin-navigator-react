@@ -1,0 +1,10 @@
+.stamp {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 6px 14px; border: 3px double var(--md-primary); border-radius: var(--md-shape-s);
+  color: var(--md-primary); font: 700 18px/22px var(--md-font-brand); letter-spacing: .08em; text-transform: uppercase;
+  transform: rotate(-6deg);
+  animation: stamp-in .35s var(--md-motion-emph) both;
+}
+.stamp--small { padding: 2px 8px; border-width: 2px; font-size: 11px; line-height: 14px; animation: none; }
+@keyframes stamp-in { from { transform: rotate(-6deg) scale(1.8); opacity: 0; } to { transform: rotate(-6deg) scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .stamp { animation: none; } }

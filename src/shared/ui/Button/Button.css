@@ -1,0 +1,17 @@
+/* M3 buttons: height 40, full rounding. */
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 40px; padding: 10px 24px; border-radius: var(--md-shape-full); cursor: pointer;
+  font: 600 14px/20px var(--md-font-plain); letter-spacing: .1px; border: 1px solid transparent; position: relative;
+}
+.btn::before { content: ""; position: absolute; inset: -4px 0; } /* 48 touch target */
+.btn .ms { font-size: 18px; margin-left: -8px; }
+.btn--filled { background: var(--md-primary); color: var(--md-on-primary); }
+.btn--filled:hover { box-shadow: var(--md-elev-1); }
+.btn--tonal { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+.btn--outlined { background: transparent; border-color: var(--md-outline); color: var(--md-primary); }
+.btn--outlined[aria-pressed="true"] { background: var(--md-secondary-container); border-color: transparent; color: var(--md-on-secondary-container); }
+.btn--text { background: none; color: var(--md-primary); padding: 10px 12px; }
+.icon-btn { position: relative; flex: none; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--md-surface-container-highest); color: var(--md-on-surface-variant); cursor: pointer; }
+.btn:disabled { opacity: .38; cursor: not-allowed; box-shadow: none; } /* M3 disabled: 38% */

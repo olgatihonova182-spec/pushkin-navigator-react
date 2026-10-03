@@ -1,0 +1,5 @@
+.me-marker { pointer-events: none; }
+.me-marker__halo { fill: var(--md-route); opacity: .22; transform-box: fill-box; transform-origin: center; animation: pulse 2s var(--md-motion-emph) infinite; }
+.me-marker__dot { fill: var(--md-route); stroke: var(--md-surface-container-lowest); stroke-width: 3; }
+@keyframes pulse { 0% { transform: scale(.6); opacity: .35; } 100% { transform: scale(1.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .me-marker__halo { animation: none; } }

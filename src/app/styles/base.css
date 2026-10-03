@@ -1,0 +1,44 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: var(--md-surface-dim);
+  color: var(--md-on-surface);
+  font: 400 16px/24px var(--md-font-plain); /* body-large */
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; color: inherit; -webkit-tap-highlight-color: transparent; }
+h1, h2, h3, p { margin: 0; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--md-route); outline-offset: 2px; }
+
+/* Icons — Material Symbols. Until the font arrives the icon name is clipped, not shown as a word. */
+.ms {
+  font-family: "Material Symbols Rounded";
+  font-weight: 400; font-style: normal; font-size: 24px; line-height: 1;
+  display: inline-block; width: 1em; height: 1em; overflow: hidden; flex: none;
+  white-space: nowrap; letter-spacing: normal; text-transform: none; direction: ltr;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  -webkit-font-smoothing: antialiased;
+}
+.ms-fill { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+
+/* M3 state layer: translucent text colour over the element. */
+.state-layer { position: relative; overflow: hidden; isolation: isolate; }
+.state-layer::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; pointer-events: none; z-index: -1; }
+.state-layer:hover::after { opacity: var(--md-hover); }
+.state-layer:active::after { opacity: var(--md-press); }
+
+/* M3 typography */
+.t-headline-m { font: 600 26px/32px var(--md-font-brand); letter-spacing: -.02em; }
+.t-headline-s { font: 600 22px/28px var(--md-font-brand); letter-spacing: -.015em; }
+.t-title-l { font: 500 22px/28px var(--md-font-plain); }
+.t-title-m { font: 600 16px/24px var(--md-font-plain); letter-spacing: .15px; }
+.t-title-s { font: 600 14px/20px var(--md-font-plain); letter-spacing: .1px; }
+.t-body-m { font: 400 14px/20px var(--md-font-plain); letter-spacing: .25px; }
+.t-body-s { font: 400 12px/16px var(--md-font-plain); letter-spacing: .4px; }
+.t-label-l { font: 600 14px/20px var(--md-font-plain); letter-spacing: .1px; }
+.t-label-m { font: 600 12px/16px var(--md-font-plain); letter-spacing: .5px; }
+.supporting-text { font: 400 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant); }
+
+/* Visible to screen readers only. */
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }

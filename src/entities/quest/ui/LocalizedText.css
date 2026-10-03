@@ -1,0 +1,6 @@
+/* Translation under the Russian text: quieter, with a mark at the start of the line. */
+.translation {
+  margin: 0; padding-block: 4px; padding-inline: 12px 0;
+  border-inline-start: 3px solid var(--md-route);
+  font: 400 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant);
+}

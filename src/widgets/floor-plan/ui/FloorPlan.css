@@ -1,0 +1,37 @@
+/* Floor plan (SVG): halls, route, markers. */
+
+.plan__outline { fill: var(--md-surface-container-lowest); stroke: var(--md-outline-variant); stroke-width: 1.5; }
+.plan__void { fill: var(--md-surface-container); stroke: var(--md-outline-variant); stroke-dasharray: 4 4; }
+.plan__void-label { font: 500 9px var(--md-font-plain); fill: var(--md-on-surface-variant); text-anchor: middle; }
+.plan__street { font: 600 10px var(--md-font-plain); fill: var(--md-on-surface-variant); text-anchor: middle; letter-spacing: .5px; }
+
+.node rect { fill: var(--md-surface-container-high); stroke: var(--md-surface-container-lowest); stroke-width: 3; transition: fill .2s, stroke .2s; }
+.node[role="button"] { cursor: pointer; }
+.node[role="button"]:hover rect { fill: var(--md-surface-container-highest); }
+.node[role="button"]:focus { outline: none; }
+.node[role="button"]:focus-visible rect { stroke: var(--md-route); stroke-width: 3; }
+.node--courtyard rect { fill: var(--md-surface-container); }
+.node--entrance rect, .node--foyer rect { fill: var(--md-secondary-container); }
+.node--exhibition rect { fill: var(--md-tertiary-container); }
+.node--stairs rect, .node--lift rect { fill: var(--md-surface-container-lowest); stroke: var(--md-outline-variant); stroke-width: 1.5; }
+.node--crowd-0 rect { fill: var(--md-crowd-0); }
+.node--crowd-1 rect { fill: var(--md-crowd-1); }
+.node--crowd-2 rect { fill: var(--md-crowd-2); }
+.node--selected rect { fill: var(--md-primary-container); stroke: var(--md-primary); stroke-width: 2.5; }
+.node__name { font: 600 10.5px var(--md-font-plain); fill: var(--md-on-surface); text-anchor: middle; pointer-events: none; }
+.node__number { font: 700 10px var(--md-font-plain); fill: var(--md-primary); pointer-events: none; }
+.node--exhibition .node__name, .node--exhibition .node__number { fill: var(--md-on-tertiary-container); }
+.node__icon { font-family: "Material Symbols Rounded"; font-size: 18px; fill: var(--md-on-surface-variant); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+
+/* Route line — as in maps: light casing and a solid line with running dots. */
+.path-casing { fill: none; stroke: var(--md-surface-container-lowest); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.path-line { fill: none; stroke: var(--md-route); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.path-flow { fill: none; stroke: var(--md-on-route); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 0.5 11; pointer-events: none; animation: path-flow 1.2s linear infinite; }
+@keyframes path-flow { to { stroke-dashoffset: -11.5; } }
+.path-later { fill: none; stroke: var(--md-outline); stroke-width: 3; stroke-dasharray: 2 6; stroke-linecap: round; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .path-flow { animation: none; } }
+
+.target { pointer-events: none; }
+.target path { fill: var(--md-primary); stroke: var(--md-surface-container-lowest); stroke-width: 2; }
+.target text { font: 700 9px var(--md-font-plain); fill: var(--md-on-primary); text-anchor: middle; dominant-baseline: middle; }
+.target--passed path { fill: var(--md-outline); }

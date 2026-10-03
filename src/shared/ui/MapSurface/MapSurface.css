@@ -1,0 +1,6 @@
+/* The map is an M3 card with rounding 28. */
+.map-surface {
+  display: block; width: 100%; height: auto;
+  background: var(--md-surface-container-low); border-radius: var(--md-shape-xl);
+}
+.footnote { margin: 8px 4px 0; font: 400 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); }

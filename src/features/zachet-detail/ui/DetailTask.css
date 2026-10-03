@@ -1,0 +1,19 @@
+.detail { display: flex; flex-direction: column; gap: 12px; }
+.detail__timer { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: var(--md-shape-s); background: var(--md-route-container); color: var(--md-on-route-container); font: 600 13px/18px var(--md-font-plain); }
+.detail__timer .ms { font-size: 18px; }
+.detail__timer--over { height: auto; padding: 8px 12px; background: var(--md-surface-container-highest); color: var(--md-on-surface); }
+.detail__lead { padding: 12px; border-radius: var(--md-shape-m); background: var(--md-tertiary-container); color: var(--md-on-tertiary-container); font: 500 14px/20px var(--md-font-plain); }
+.detail__question { font: 600 17px/24px var(--md-font-plain); }
+.detail__options { display: flex; flex-direction: column; gap: 8px; }
+.detail__option { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 48px; padding: 12px 16px; border: 1px solid var(--md-outline); border-radius: var(--md-shape-m); background: transparent; color: var(--md-on-surface); text-align: start; font: 500 16px/22px var(--md-font-plain); cursor: pointer; }
+.detail__option[aria-disabled="true"] { cursor: default; }
+/* Right and wrong — by an icon and the outline too, not by colour only. */
+.detail__option--right { background: var(--md-crowd-0); color: var(--md-on-crowd-0); border: 2px solid var(--md-on-crowd-0); }
+.detail__option--wrong { background: var(--md-crowd-2); color: var(--md-on-crowd-2); border-style: dashed; }
+.detail__feedback { font: 600 14px/20px var(--md-font-plain); }
+.detail__feedback--right { color: var(--md-on-crowd-0); }
+.detail__feedback--wrong { color: var(--md-on-crowd-2); }
+.detail__hint { display: flex; gap: 8px; padding: 12px; border-radius: var(--md-shape-m); background: var(--md-surface-container-high); font: 400 14px/20px var(--md-font-plain); }
+.detail__note { font: 400 13px/18px var(--md-font-plain); color: var(--md-on-surface-variant); }
+.detail__result { display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: var(--md-shape-m); background: var(--md-surface-container-lowest); box-shadow: var(--md-elev-1); font: 400 15px/22px var(--md-font-plain); }
+.detail > .btn { align-self: flex-start; }

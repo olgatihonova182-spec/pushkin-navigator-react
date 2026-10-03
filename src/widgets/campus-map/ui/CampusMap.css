@@ -1,0 +1,27 @@
+/* Campus — in the illustration style: "sky", white walls, dark outline (shared Illustration.css). */
+.campus .il-line { stroke-width: 1.6; }
+.campus .il-thin { stroke-width: 1; }
+.street-axis { fill: none; stroke: var(--il-line); stroke-width: 1; stroke-dasharray: 6 6; opacity: .35; }
+.street-label {
+  font: 600 9.5px var(--md-font-plain); fill: var(--md-on-surface-variant); text-anchor: middle; dominant-baseline: central; letter-spacing: .5px;
+  paint-order: stroke; stroke: var(--il-wall); stroke-width: 5px; stroke-linejoin: round;
+}
+.house { cursor: pointer; }
+.house__zone { fill: transparent; stroke: transparent; stroke-width: 2.5; transition: fill .2s, stroke .2s; }
+.house:hover .house__zone { fill: color-mix(in srgb, var(--md-on-surface) 6%, transparent); }
+.house:focus { outline: none; }
+.house:focus-visible .house__zone { stroke: var(--md-route); }
+.house--selected .house__zone { stroke: var(--md-primary); fill: color-mix(in srgb, var(--md-primary) 10%, transparent); }
+.house--on-route .house__zone { stroke: var(--md-route); stroke-dasharray: 4 4; }
+.house__name {
+  font: 600 10px var(--md-font-plain); fill: var(--md-on-surface); text-anchor: middle; pointer-events: none;
+  paint-order: stroke; stroke: var(--il-sky); stroke-width: 4px; stroke-linejoin: round;
+}
+.house__address {
+  font: 500 9px var(--md-font-plain); fill: var(--md-on-surface-variant); text-anchor: middle; pointer-events: none;
+  paint-order: stroke; stroke: var(--il-sky); stroke-width: 4px; stroke-linejoin: round;
+}
+.house--has-plan .house__name { fill: var(--md-primary); }
+.campus-path { fill: none; stroke: var(--md-route); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 0.5 8; pointer-events: none; animation: campus-path-flow 1.2s linear infinite; }
+@keyframes campus-path-flow { to { stroke-dashoffset: -8.5; } }
+@media (prefers-reduced-motion: reduce) { .campus-path { animation: none; } }

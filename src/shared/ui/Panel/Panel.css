@@ -1,0 +1,11 @@
+/* Cards under the map. M3 card — filled, rounding 28. */
+.panel {
+  margin: 16px 16px 0; padding: 16px;
+  background: var(--md-surface-container-low); border-radius: var(--md-shape-xl);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.panel__row { display: flex; align-items: center; gap: 12px; }
+.panel__text { flex: 1 1 180px; min-width: 0; }
+.panel__name { font: 600 16px/24px var(--md-font-plain); color: var(--md-on-surface); }
+.panel__hint { display: flex; gap: 12px; align-items: flex-start; font: 400 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant); }
+.icon-circle { flex: none; width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--md-route-container); color: var(--md-on-route-container); }

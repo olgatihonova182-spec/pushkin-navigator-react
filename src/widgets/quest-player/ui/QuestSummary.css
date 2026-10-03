@@ -1,0 +1,77 @@
+/* Final summary of a quest. Colours — M3 roles only. */
+.summary { position: relative; display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px; }
+
+.summary__hero {
+  position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;
+  padding: 24px 16px; border-radius: var(--md-shape-xl);
+  background: var(--md-primary-container); color: var(--md-on-primary-container);
+}
+.summary__hero h2 { outline: none; }
+.summary__hero .translation { color: var(--md-on-primary-container); border-color: var(--md-on-primary-container); text-align: start; }
+.summary__trophy {
+  width: 80px; height: 80px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--md-tertiary-container); color: var(--md-on-tertiary-container);
+  animation: trophy-pop .6s var(--md-motion-emph) both;
+}
+.summary__trophy .ms { font-size: 44px; }
+.summary__label { font: 600 12px/16px var(--md-font-plain); letter-spacing: .8px; text-transform: uppercase; }
+.summary__rank { font: 700 24px/30px var(--md-font-brand); letter-spacing: -.02em; color: var(--md-primary); animation: rank-in .5s .3s var(--md-motion-emph) both; }
+.summary__comment { font: 400 16px/24px var(--md-font-plain); }
+@keyframes trophy-pop { 0% { transform: scale(.3) rotate(-20deg); opacity: 0; } 70% { transform: scale(1.12) rotate(6deg); opacity: 1; } 100% { transform: none; } }
+@keyframes rank-in { from { transform: translateY(8px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.summary__title { font: 600 14px/20px var(--md-font-plain); letter-spacing: .1px; color: var(--md-primary); margin-top: 12px; }
+
+.summary__stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.stat { display: flex; flex-direction: column; gap: 2px; padding: 12px; border-radius: var(--md-shape-l); background: var(--md-surface-container-low); }
+.stat .ms { color: var(--md-route); font-size: 20px; }
+.stat__value { font: 700 28px/34px var(--md-font-brand); letter-spacing: -.02em; color: var(--md-on-surface); }
+.stat__label { font: 400 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); }
+
+.badges { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.badge {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 12px 6px;
+  border-radius: var(--md-shape-l); border: 1px dashed var(--md-outline-variant); color: var(--md-on-surface-variant);
+}
+.badge__icon { width: 44px; height: 44px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--md-surface-container-highest); }
+.badge__name { font: 600 12px/16px var(--md-font-plain); }
+.badge__translation { font: 400 11px/14px var(--md-font-plain); }
+.badge__state { font: 400 11px/14px var(--md-font-plain); }
+/* Earned: filled card, coloured medal, solid outline — not by colour only. */
+.badge--earned { border: 1px solid transparent; background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+.badge--earned .badge__icon { background: var(--md-tertiary-container); color: var(--md-on-tertiary-container); }
+
+.quote { margin: 0; padding: 16px; border-radius: var(--md-shape-l); background: var(--md-surface-container-lowest); box-shadow: var(--md-elev-1); }
+.quote blockquote { margin: 0; font: 500 17px/26px var(--md-font-plain); color: var(--md-on-surface); }
+.quote figcaption { margin-top: 6px; font: 400 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); }
+
+.path { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.path__step { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: var(--md-shape-m); background: var(--md-surface-container-low); font: 400 14px/20px var(--md-font-plain); }
+.path__step > .ms { color: var(--md-on-surface-variant); font-size: 20px; }
+.path__n { flex: none; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--md-surface-container-highest); font: 600 12px/1 var(--md-font-plain); }
+.path__text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.path__hall { font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant); }
+.path__outcome { display: inline-flex; align-items: center; gap: 4px; font: 600 12px/16px var(--md-font-plain); text-align: end; }
+.path__outcome .ms { font-size: 18px; }
+.path__step--firstTry .path__outcome { color: var(--md-primary); }
+.path__step--revealed .path__outcome { color: var(--md-on-surface-variant); }
+
+/* Confetti: role colours, falls once. */
+.confetti { position: absolute; inset: 0 0 auto; height: 260px; overflow: hidden; pointer-events: none; z-index: 1; }
+.confetti span {
+  position: absolute; top: -12px; left: calc(4% + var(--i) * 6.8%);
+  width: 8px; height: 12px; border-radius: 2px;
+  background: var(--md-primary);
+  animation: confetti-fall 2.2s calc(var(--i) * 60ms) ease-in forwards;
+}
+.confetti span:nth-child(3n) { background: var(--md-route); width: 10px; height: 10px; border-radius: 50%; }
+.confetti span:nth-child(3n + 1) { background: var(--md-tertiary-container); }
+.confetti span:nth-child(4n) { background: var(--md-crowd-0); }
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(260px) rotate(540deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .confetti { display: none; }
+  .summary__trophy, .summary__rank { animation: none; }
+}

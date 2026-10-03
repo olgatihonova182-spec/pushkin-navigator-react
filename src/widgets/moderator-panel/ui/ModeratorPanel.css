@@ -1,0 +1,49 @@
+/* Moderator's bug and its panel. Like the bug in the participant and moderator prototypes:
+   a white circle with a warning-tone border in the corner, a panel that slides out above it.
+   Button tones by meaning (danger — reset). Demo buttons are not checked for contrast. */
+.mod-fab {
+  position: fixed; right: 20px; bottom: 20px; z-index: 60;
+  width: 52px; height: 52px; padding: 0; border-radius: 50%; cursor: pointer;
+  background: var(--md-surface-container-lowest); color: var(--md-tertiary);
+  border: 1.5px solid var(--md-tertiary);
+  box-shadow: var(--md-elev-2);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s, transform .15s;
+}
+.mod-fab:hover { background: var(--md-tertiary-container); transform: translateY(-1px); }
+
+.mod-panel {
+  position: fixed; right: 20px; bottom: 84px; z-index: 60;
+  width: 320px; max-width: calc(100vw - 40px); max-height: calc(100vh - 120px); overflow-y: auto;
+  padding: 16px; border-radius: var(--md-shape-l);
+  background: var(--md-surface-container-lowest); color: var(--md-on-surface);
+  border: 1.5px solid var(--md-tertiary);
+  box-shadow: var(--md-elev-3);
+  animation: mod-panel-in .22s var(--md-motion-emph);
+}
+@keyframes mod-panel-in { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .mod-panel { animation: none; } }
+.mod-panel__title { font: 700 14px/20px var(--md-font-plain); color: var(--md-tertiary); outline: none; }
+.mod-panel__hint { font: 500 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); margin-top: 4px; }
+.mod-panel__group { font: 700 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); margin: 16px 0 8px; }
+.mod-panel__state { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+.mod-panel__state div { display: flex; flex-direction: column; }
+.mod-panel__state dt { font: 500 11px/14px var(--md-font-plain); color: var(--md-on-surface-variant); }
+.mod-panel__state dd { margin: 0; font: 600 13px/18px var(--md-font-plain); }
+.mod-panel__btn {
+  display: block; width: 100%; text-align: left; margin-top: 12px;
+  min-height: 40px; padding: 10px 12px; border-radius: var(--md-shape-s); cursor: pointer;
+  border: 1.5px solid var(--md-outline); background: var(--md-surface-container-lowest); color: var(--md-on-surface);
+  font: 600 13px/18px var(--md-font-plain);
+}
+.mod-panel__btn span { display: block; margin-top: 4px; font: 500 12px/16px var(--md-font-plain); color: inherit; }
+.mod-panel__btn[data-tone="danger"] { background: var(--md-error-container); color: var(--md-on-error-container); border-color: var(--md-error); }
+.mod-panel__btn:hover:not(:disabled) { filter: brightness(0.96); }
+.mod-panel__btn:disabled { cursor: not-allowed; opacity: .55; }
+.mod-panel__done { margin-top: 8px; font: 600 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); }
+
+/* On a phone the app fills the screen: the bug sits above the navigation bar. */
+@media (max-width: 500px) {
+  .mod-fab { right: 12px; bottom: calc(96px + env(safe-area-inset-bottom)); width: 48px; height: 48px; }
+  .mod-panel { right: 12px; bottom: calc(148px + env(safe-area-inset-bottom)); max-width: calc(100vw - 24px); max-height: calc(100vh - 180px); }
+}

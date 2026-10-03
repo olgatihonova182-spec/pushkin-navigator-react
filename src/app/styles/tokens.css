@@ -1,0 +1,117 @@
+/* Tokens by Material Design 3 (Google's open design system, Apache 2.0).
+   Colour roles — an M3 scheme from the seed #4A3FCF (indigo); picked by hand from M3 tonal palettes,
+   not run through Theme Builder. Own roles beyond M3 (like M3 "custom colors"):
+   --md-route — route line and "you are here", --md-crowd-* — hall crowd levels.
+   Light scheme by default, dark — by the phone setting. */
+:root {
+  color-scheme: light dark;
+
+  --md-primary: #4A3FCF;
+  --md-on-primary: #FFFFFF;
+  --md-primary-container: #E3DFFF;
+  --md-on-primary-container: #140067;
+  --md-secondary-container: #E4E0F9;
+  --md-on-secondary-container: #1A1A2C;
+  --md-tertiary: #6B5E10;
+  --md-tertiary-container: #F5E28A;
+  --md-on-tertiary-container: #211B00;
+  --md-error: #BA1A1A;
+  --md-error-container: #FFDAD6;
+  --md-on-error-container: #410002;
+
+  --md-surface: #FCF8FF;
+  --md-surface-dim: #DCD9E2;
+  --md-surface-container-lowest: #FFFFFF;
+  --md-surface-container-low: #F6F2FC;
+  --md-surface-container: #F0ECF6;
+  --md-surface-container-high: #EAE7F1;
+  --md-surface-container-highest: #E5E1EB;
+  --md-on-surface: #1B1B21;
+  --md-on-surface-variant: #47464F;
+  --md-outline: #787680;
+  --md-outline-variant: #C8C5D0;
+  --md-inverse-surface: #303036;
+  --md-inverse-on-surface: #F3EFF7;
+  --md-scrim: rgba(0, 0, 0, .32);
+
+  --md-route: #0061A4;
+  --md-on-route: #FFFFFF;
+  --md-route-container: #D1E4FF;
+  --md-on-route-container: #001D36;
+
+  --md-crowd-0: #C8EBC0; --md-on-crowd-0: #0F3A0C;
+  --md-crowd-1: #FFE08A; --md-on-crowd-1: #3B2F00;
+  --md-crowd-2: #FFDAD6; --md-on-crowd-2: #690005;
+
+  /* Illustrations: the same roles, so drawings live in both schemes. */
+  --il-sky: var(--md-secondary-container);
+  --il-wall: var(--md-surface-container-lowest);
+  --il-line: var(--md-on-surface);
+  --il-accent: var(--md-primary);
+  --il-sun: var(--md-tertiary-container);
+  --il-water: var(--md-route-container);
+
+  /* M3 shape: none 0, extra-small 4, small 8, medium 12, large 16, extra-large 28, full. */
+  --md-shape-xs: 4px;
+  --md-shape-s: 8px;
+  --md-shape-m: 12px;
+  --md-shape-l: 16px;
+  --md-shape-xl: 28px;
+  --md-shape-full: 999px;
+
+  /* M3 elevation, levels 1–3. Surfaces differ by tone first, shadow is secondary. */
+  --md-elev-1: 0 1px 2px rgba(0, 0, 0, .30), 0 1px 3px 1px rgba(0, 0, 0, .15);
+  --md-elev-2: 0 1px 2px rgba(0, 0, 0, .30), 0 2px 6px 2px rgba(0, 0, 0, .15);
+  --md-elev-3: 0 4px 8px 3px rgba(0, 0, 0, .15), 0 1px 3px rgba(0, 0, 0, .30);
+
+  /* M3 state layers: hover 8%, focus and press 10%. */
+  --md-hover: .08;
+  --md-press: .10;
+
+  /* Fonts: text — Onest, headings — Unbounded. Both OFL, Google Fonts. */
+  --md-font-plain: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --md-font-brand: "Unbounded", "Onest", system-ui, sans-serif;
+  --md-motion-emph: cubic-bezier(.2, 0, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-primary: #C4C0FF;
+    --md-on-primary: #2416A0;
+    --md-primary-container: #3A2FB6;
+    --md-on-primary-container: #E3DFFF;
+    --md-secondary-container: #464559;
+    --md-on-secondary-container: #E4E0F9;
+    --md-tertiary: #D8C671;
+    --md-tertiary-container: #534600;
+    --md-on-tertiary-container: #F5E28A;
+    --md-error: #FFB4AB;
+    --md-error-container: #93000A;
+    --md-on-error-container: #FFDAD6;
+
+    --md-surface: #131318;
+    --md-surface-dim: #131318;
+    --md-surface-container-lowest: #0E0E13;
+    --md-surface-container-low: #1B1B21;
+    --md-surface-container: #1F1F25;
+    --md-surface-container-high: #2A292F;
+    --md-surface-container-highest: #35343A;
+    --md-on-surface: #E5E1E9;
+    --md-on-surface-variant: #C8C5D0;
+    --md-outline: #928F9A;
+    --md-outline-variant: #47464F;
+    --md-inverse-surface: #E5E1E9;
+    --md-inverse-on-surface: #303036;
+
+    --md-route: #9ECAFF;
+    --md-on-route: #003258;
+    --md-route-container: #00497D;
+    --md-on-route-container: #D1E4FF;
+
+    --md-crowd-0: #1F4F1A; --md-on-crowd-0: #C8EBC0;
+    --md-crowd-1: #574500; --md-on-crowd-1: #FFE08A;
+    --md-crowd-2: #93000A; --md-on-crowd-2: #FFDAD6;
+
+    --il-wall: var(--md-surface-container-high);
+  }
+}

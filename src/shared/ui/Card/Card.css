@@ -1,0 +1,14 @@
+/* M3 cards: filled, rounding 28. Used by ready-made routes and quests. */
+.card-list { display: flex; flex-direction: column; gap: 16px; padding: 8px 16px 0; }
+.card { background: var(--md-surface-container-low); border-radius: var(--md-shape-xl); overflow: hidden; display: flex; flex-direction: column; }
+.card__image { display: block; width: 100%; height: auto; }
+.card__body { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.card--own { background: var(--md-primary-container); color: var(--md-on-primary-container); }
+.card--own .card__text { color: var(--md-on-primary-container); }
+.card__top { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.card__tag { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: var(--md-shape-s); background: var(--md-secondary-container); color: var(--md-on-secondary-container); font: 600 12px/16px var(--md-font-plain); letter-spacing: .5px; }
+.card__title { font: 600 19px/24px var(--md-font-brand); letter-spacing: -.01em; }
+.card__text { font: 400 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant); }
+.card__meta { font: 500 12px/16px var(--md-font-plain); color: var(--md-on-surface-variant); letter-spacing: .4px; }
+.card .btn { margin-top: 4px; }
+.card__status { font: 600 14px/20px var(--md-font-plain); color: var(--md-primary); }

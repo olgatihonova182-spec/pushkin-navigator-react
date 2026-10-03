@@ -1,0 +1,2 @@
+.time-chip { display: inline-flex; align-items: center; gap: 6px; flex: none; height: 32px; padding: 0 12px; border-radius: var(--md-shape-s); background: var(--md-route-container); color: var(--md-on-route-container); font: 600 13px/20px var(--md-font-plain); }
+.time-chip .ms { font-size: 18px; }

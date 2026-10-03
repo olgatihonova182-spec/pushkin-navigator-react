@@ -1,0 +1,5 @@
+/* Step 2: topic, 20-second timer, sent / skip. */
+.voice { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.voice__topic { font: 600 16px/22px var(--md-font-plain); }
+.voice__timer { display: inline-flex; align-items: center; gap: 6px; font: 700 28px/34px var(--md-font-brand); color: var(--md-primary); }
+.voice__done { display: inline-flex; align-items: center; gap: 6px; font: 600 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant); }

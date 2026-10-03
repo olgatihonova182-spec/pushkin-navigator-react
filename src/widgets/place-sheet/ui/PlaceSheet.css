@@ -1,0 +1,27 @@
+/* Modal M3 bottom sheet: rounding 28 on top, handle 32×4, surface-container-low. */
+.sheet-scrim { position: absolute; inset: 0; z-index: 5; background: var(--md-scrim); animation: fade-in .2s ease-out; }
+.sheet {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;
+  max-height: 82%; overflow-y: auto;
+  background: var(--md-surface-container-low); border-radius: var(--md-shape-xl) var(--md-shape-xl) 0 0;
+  padding: 0 16px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+  box-shadow: var(--md-elev-1);
+  animation: sheet-up .3s var(--md-motion-emph);
+}
+@keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sheet, .sheet-scrim { animation: none; } }
+.sheet__handle, .sheet__header { touch-action: none; }
+.sheet__handle { cursor: grab; flex: none; width: 32px; height: 4px; border-radius: 2px; background: var(--md-on-surface-variant); opacity: .4; margin: 16px auto 0; }
+.sheet__header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.sheet__title { font: 600 20px/26px var(--md-font-brand); letter-spacing: -.01em; }
+.sheet__row { display: flex; gap: 8px; flex-wrap: wrap; }
+.sheet__about { font: 400 14px/20px var(--md-font-plain); color: var(--md-on-surface-variant); }
+.sheet__picture { border-radius: var(--md-shape-l); overflow: hidden; background: var(--il-sky); }
+.sheet__picture svg { display: block; width: 100%; height: auto; }
+
+/* Lists inside the sheet sit flush and one tone up. */
+.sheet .subheading { margin: 4px 0 4px; }
+.sheet .list { margin: 0; background: var(--md-surface-container); }
+.sheet > .list-row { background: var(--md-surface-container); border-radius: var(--md-shape-l); }
